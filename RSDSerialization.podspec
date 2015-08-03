@@ -10,29 +10,20 @@
 Pod::Spec.new do |s|
   s.name             = "RSDSerialization"
   s.version          = "0.1.0"
-  s.summary          = "A short description of RSDSerialization."
+  s.summary          = "JSON Serialization helpers written in swift"
   s.description      = <<-DESC
-                       An optional longer description of RSDSerialization
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/RSDSerialization"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+                        Methods to aid in JSON serialization/deserialization for STRUCT types in Swift.
+                        Of course these methods can also be used for CLASS types, but since CLASS types can support dynamic (objective-c) style reflection, there are probably better alternatives.
+                        DESC
+  s.homepage         = "https://github.com/RaviDesai/RSDSerialization"
   s.license          = 'MIT'
   s.author           = { "RaviDesai" => "ravidesai@me.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/RSDSerialization.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/RaviDesai/RSDSerialization.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/Ravi_S_Desai'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'RSDSerialization' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Foundation'
 end

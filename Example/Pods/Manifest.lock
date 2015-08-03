@@ -1,0 +1,14 @@
+PODS:
+  - RSDSerialization (0.1.0)
+
+DEPENDENCIES:
+  - RSDSerialization (from `../`)
+
+EXTERNAL SOURCES:
+  RSDSerialization:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RSDSerialization: 4010a7e20f9680552e8843e1ea0146b35d9ea47a
+
+COCOAPODS: 0.38.2
