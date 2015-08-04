@@ -15,7 +15,7 @@ This Pod provides a small library that makes defining serializable structs in Sw
 
 ### Defining Model objects
 
-It defines a protocol called JSONSerializable, which is composed from SerializableToJSON and SerializableFromJSON.  SerializableToJSON defines a function called convertToJSON and SerializableFromJSON defines a function called convertFromJSON.  The tricky part, of course is implementing these two functions, and this library attempts to help you do this with concise and safe code.
+RSDSerialization defines a protocol called JSONSerializable, which is composed of two other protocols: SerializableToJSON and SerializableFromJSON.  SerializableToJSON defines a function called convertToJSON and SerializableFromJSON defines a function called convertFromJSON.  The tricky part, of course is implementing these two functions, and this library attempts to help you do this with concise and safe code.
 
 Please note that in the following code JSON is a typealias for AnyObject and JSONDictionary is a typealias for [String, AnyObject]
 
@@ -75,11 +75,11 @@ struct MyModelObject: JSONSerialization {
 }
 ```
 
-In convertToJSON, the ```addTuplesIf``` function is a concise way of adding a value to a JSONDictionary only if the object being passed in is not null (it omits it from the dictionary if the value is null).  
+In convertToJSON, the ```addTuplesIf``` function is a concise way of adding a value to a JSONDictionary only if the object being passed in is not nil (it omits it from the dictionary if the value is nil).  
 
 In createFromJSON, the complexity level rises a little, there are some advanced functional concepts going on here. The RSDSerialization framework defines three new operators ```>>-```, ```<*>```, and ```<**>```.  The ```>>-``` operator has higher precedence than the other two, so it is executed first.  But before I get to the functioning of these operators let's examine the JSON/JSONDictionary interaction.
 
-When run on the JSON string above, the result of the NSJSONSerialization function in the Foundation library is to produce an NSArray object that contains two NSDictionary objects.  The first NSDictionary object has three entries (intValue, stringValue, and dateValue) and the second NSDictionary object has two entries (just intValue and stringValue).  Swift can interoperate with the Foundation library NSDictionary type in surprising ways, one of the ways is that it you can cast from an NSDictionary object into a Swift generic dictionary of type [String: AnyObject] using as simple ```as?``` cast.  If it succeeds I have a Swift generic dictionary that I can deference to get AnyObject types.  The problem is that record["intValue"] returns and AnyObject? (optional) not an AnyObject because the "intValue" key may not exist in the dictionary.  So there is a complex interplay between ```>>-``` and the function following it ```asInt``` that converts any AnyObject? into an Int?.   The same is true for >>- asString and >>- asDate which convert to AnyObject? to String? and NSDate? types respectively.
+When run on the JSON string above, the result of the NSJSONSerialization function in the Foundation library is to produce an NSArray object that contains two NSDictionary objects.  The first NSDictionary object has three entries (intValue, stringValue, and dateValue) and the second NSDictionary object has two entries (just intValue and stringValue).  Swift can interoperate with the Foundation library NSDictionary type in surprising ways, one of the ways is that it you can cast from an NSDictionary object into a Swift generic dictionary of type [String: AnyObject] using as simple ```as?``` cast.  If it succeeds I have a Swift generic dictionary that I can dereference to get AnyObject types.  The problem is that record["intValue"] returns and AnyObject? (optional) not an AnyObject because the "intValue" key may not exist in the dictionary.  So there is a complex interplay between ```>>-``` and the function following it ```asInt``` that converts any AnyObject? into an Int?.   The same is true for >>- asString and >>- asDate which convert to AnyObject? to String? and NSDate? types respectively.
 
 The RSDSerialization framework supplies helper functions for conversion to optional Int, String, Double, Bool, Date, and URL types.  It is also generally quite easy to create your own 'as' helper functions, and I do so for Enum types in the Example project and tests that ship with this Pod.
 
