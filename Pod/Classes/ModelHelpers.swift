@@ -15,18 +15,18 @@ public func addIf<Key, Value>(inout toDictionary: Dictionary<Key, Value>, key: K
 
 public func addTuplesIf<Key, Value>(inout toDictionary: Dictionary<Key, Value>, tuples: (Key, Value?)...) -> Void {
     for tuple in tuples {
-        addIf(&toDictionary, tuple.0, tuple.1)
+        addIf(&toDictionary, key: tuple.0, value: tuple.1)
     }
 }
 
 public func convertToFormUrl<Key, Value>(fromDictionary: Dictionary<Key, Value>) -> NSData {
     var urlParams = Array<String>();
     for (key, value) in fromDictionary {
-        var encodedKey: CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, "\(key)", nil, ":/?#[]@!$'()*+,;",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) ?? ""
-        var encodeValue: CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, "\(value)", nil, ":/?#[]@!$'()*+,;",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) ?? ""
+        let encodedKey: CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, "\(key)", nil, ":/?#[]@!$'()*+,;",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) ?? ""
+        let encodeValue: CFString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, "\(value)", nil, ":/?#[]@!$'()*+,;",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) ?? ""
         urlParams.append(("\(encodedKey)=\(encodeValue)"))
     }
-    var strData = "&".join(urlParams);
+    let strData = urlParams.joinWithSeparator("&");
     return strData.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) ?? NSData()
 }
 

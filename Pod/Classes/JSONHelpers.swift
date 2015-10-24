@@ -14,7 +14,7 @@ public typealias JSONDictionary = [String: JSON]
 
 public func toStringFromDate(format: String, dateOptional: NSDate?) -> String? {
     if let date = dateOptional {
-        var formatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         formatter.dateFormat = format
         return formatter.stringFromDate(date);
@@ -23,7 +23,7 @@ public func toStringFromDate(format: String, dateOptional: NSDate?) -> String? {
 }
 
 public func toDateFromString(format: String, dateString: String) -> NSDate? {
-    var formatter = NSDateFormatter()
+    let formatter = NSDateFormatter()
     formatter.dateFormat = format
     return formatter.dateFromString(dateString)
 }
@@ -61,7 +61,7 @@ public func asUrl(object: JSON) -> NSURL? {
 
 public func asDate(format: String)(object: JSON) -> NSDate? {
     if let dateString = object as? String {
-        return toDateFromString(format, dateString)
+        return toDateFromString(format, dateString: dateString)
     }
     return nil
 }

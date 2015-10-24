@@ -129,7 +129,7 @@ public struct Content : JSONSerializable {
     public func convertToJSON() -> JSONDictionary {
         var dict = JSONDictionary()
         addTuplesIf(&dict,
-            ("wrapperType", self.Wrapper.rawValue),
+            tuples: ("wrapperType", self.Wrapper.rawValue),
             ("kind", self.Kind.rawValue),
             ("artistId", self.ArtistId),
             ("collectionId", self.CollectionId),
@@ -157,7 +157,7 @@ public struct Content : JSONSerializable {
             ("country", self.Country),
             ("currency", self.Currency),
             ("primaryGenreName", self.PrimaryGenreName),
-            ("releaseDate", toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", self.ReleaseDate))
+            ("releaseDate", toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: self.ReleaseDate))
         )
         return dict
     }

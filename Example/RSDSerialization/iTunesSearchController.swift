@@ -17,7 +17,7 @@ class iTunesSearchController: UIViewController, UITableViewDelegate {
         if (viewModel != nil) { return }
         
         viewModel = iTunesSearchViewModel(callback: { (tableView, indexPath, content) -> UITableViewCell in
-            var cell = tableView.dequeueReusableCellWithIdentifier("iTunesSeachCell") as! iTunesSearchTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("iTunesSeachCell") as! iTunesSearchTableViewCell
             cell.populateLabels(content)
             return cell
         }, searchCallback:{ ()->() in

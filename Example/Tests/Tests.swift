@@ -17,8 +17,7 @@ class Tests: XCTestCase {
     func getiTunesResults() -> ContentRecords? {
         var result: ContentRecords?
         if let data = self.getiTunesData() {
-            var error: NSError?
-            let json: JSON? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)
+            let json: JSON? = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
             if let jsonDictionary: JSON = json {
                 result = ModelFactory<ContentRecords>.createFromJSON(jsonDictionary)
             }
@@ -49,15 +48,15 @@ class Tests: XCTestCase {
     }
     
     func testReleaseDates() {
-        let releaseDates = contentRecords?.Results.map { $0.ReleaseDate }.filter { $0 == toDateFromString("yyyy-MM-dd'T'HH:mm:ssX", "2011-09-23T07:00:00Z") }
+        let releaseDates = contentRecords?.Results.map { $0.ReleaseDate }.filter { $0 == toDateFromString("yyyy-MM-dd'T'HH:mm:ssX", dateString: "2011-09-23T07:00:00Z") }
         XCTAssert(releaseDates?.count == .Some(44), "6 records have different dates")
         
         let releaseDateForFirstRecord = contentRecords?.Results.map { $0.ReleaseDate }.first
-        let firstRecordDate = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", releaseDateForFirstRecord)
+        let firstRecordDate = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: releaseDateForFirstRecord)
         XCTAssert(firstRecordDate == "2011-09-23T07:00:00Z", "date for first record wrong")
 
         let releaseDateForLastRecord = contentRecords?.Results.map { $0.ReleaseDate }.last
-        let lastRecordDate = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", releaseDateForLastRecord)
+        let lastRecordDate = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: releaseDateForLastRecord)
         XCTAssert(lastRecordDate == "2011-09-23T07:00:00Z", "date for last record wrong")
     }
     

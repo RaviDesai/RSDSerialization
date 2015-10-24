@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/RaviDesai/RSDSpecs.git'
 use_frameworks!
 
 target 'RSDSerialization_Example', :exclusive => true do

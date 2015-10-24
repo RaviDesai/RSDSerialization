@@ -77,12 +77,10 @@ class iTunesSearchViewModel : NSObject, UITableViewDataSource, UISearchBarDelega
         cellInstantiator = callback
         searchChanged = searchCallback
         searchText = nil
-        var data = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        var error: NSError?
-        if let json: JSON = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: &error) {
-            self.records = ModelFactory<ContentRecords>.createFromJSON(json)
-            self.originalRecords = self.records
-        }
+        let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        let json: JSON = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+        self.records = ModelFactory<ContentRecords>.createFromJSON(json)
+        self.originalRecords = self.records
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

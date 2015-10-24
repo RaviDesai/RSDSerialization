@@ -25,7 +25,7 @@ public struct ContentRecords: JSONSerializable {
     public func convertToJSON() -> JSONDictionary {
         var dict = JSONDictionary()
         addTuplesIf(&dict,
-            ("resultCount", self.ResultCount),
+            tuples: ("resultCount", self.ResultCount),
             ("results", convertToJSONArray(self.Results)))
         return dict
     }

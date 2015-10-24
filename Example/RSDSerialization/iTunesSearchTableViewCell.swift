@@ -24,7 +24,7 @@ class iTunesSearchTableViewCell: UITableViewCell {
             trackNumberLabel.text = "\(contentForLabel.TrackNumber)"
             totalTracksLabel.text = "\(contentForLabel.TrackCount)"
             trackLabel.text = "\(contentForLabel.TrackName)"
-            releaseDateLabel.text = toStringFromDate("MM-dd-yyyy", contentForLabel.ReleaseDate)
+            releaseDateLabel.text = toStringFromDate("MM-dd-yyyy", dateOptional: contentForLabel.ReleaseDate)
         } else {
             trackLabel.text = "Missing data"
         }
