@@ -66,8 +66,8 @@ class Tests: XCTestCase {
     }
     
     func testPreviewURL() {
-        let previewURL = contentRecords?.Results.map { $0.PreviewURL }.first
+        let previewURL = contentRecords?.Results.map { $0.PreviewURL! }.first
         XCTAssert(previewURL != nil)
-        XCTAssert(previewURL??.absoluteString == .Some("http://a1626.phobos.apple.com/us/r1000/030/Music6/v4/e0/38/1d/e0381d61-42fa-9f05-4ef9-47869d5f0eec/mzaf_5336350570700489631.plus.aac.p.m4a"))
+        XCTAssert(previewURL?.absoluteString == .Some("http://a1626.phobos.apple.com/us/r1000/030/Music6/v4/e0/38/1d/e0381d61-42fa-9f05-4ef9-47869d5f0eec/mzaf_5336350570700489631.plus.aac.p.m4a"))
     }
 }

@@ -14,6 +14,9 @@
 		417B14581B6FD7AA009EF921 /* ContentRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B14561B6FD7AA009EF921 /* ContentRecords.swift */; };
 		417B14591B6FDF7B009EF921 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B14551B6FD7AA009EF921 /* Content.swift */; };
 		417B145A1B6FDF7B009EF921 /* ContentRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B14561B6FD7AA009EF921 /* ContentRecords.swift */; };
+		41A83CD11BDD6294003AF6D0 /* TestJSONHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A83CD01BDD6294003AF6D0 /* TestJSONHelpers.swift */; };
+		41DDE3101BDD90B3009EF496 /* TestModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DDE30E1BDD9095009EF496 /* TestModelHelpers.swift */; };
+		41DDE3131BDD919E009EF496 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DDE3111BDD913E009EF496 /* Sample.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* iTunesSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* iTunesSearchController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		417B14531B6FD6D1009EF921 /* iTunesSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewCell.swift; sourceTree = "<group>"; };
 		417B14551B6FD7AA009EF921 /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		417B14561B6FD7AA009EF921 /* ContentRecords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRecords.swift; sourceTree = "<group>"; };
+		41A83CD01BDD6294003AF6D0 /* TestJSONHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJSONHelpers.swift; sourceTree = "<group>"; };
+		41DDE30E1BDD9095009EF496 /* TestModelHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModelHelpers.swift; sourceTree = "<group>"; };
+		41DDE3111BDD913E009EF496 /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		560B75F4F4B8B34D69060232 /* Pods-RSDSerialization_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSDSerialization_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSDSerialization_Example/Pods-RSDSerialization_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		59CF9358A69DBA6C1AFB36A3 /* RSDSerialization.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RSDSerialization.podspec; path = ../RSDSerialization.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RSDSerialization_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSDSerialization_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,9 +157,12 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				417B14491B6F9F92009EF921 /* iTunesResults.json */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				417B14491B6F9F92009EF921 /* iTunesResults.json */,
+				41DDE3111BDD913E009EF496 /* Sample.swift */,
+				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				41A83CD01BDD6294003AF6D0 /* TestJSONHelpers.swift */,
+				41DDE30E1BDD9095009EF496 /* TestModelHelpers.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -391,7 +400,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DDE3131BDD919E009EF496 /* Sample.swift in Sources */,
+				41DDE3101BDD90B3009EF496 /* TestModelHelpers.swift in Sources */,
 				417B14591B6FDF7B009EF921 /* Content.swift in Sources */,
+				41A83CD11BDD6294003AF6D0 /* TestJSONHelpers.swift in Sources */,
 				417B145A1B6FDF7B009EF921 /* ContentRecords.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
