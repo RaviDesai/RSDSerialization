@@ -8,6 +8,4 @@ end
 
 target 'RSDSerialization_Tests', :exclusive => true do
   pod "RSDSerialization", :path => "../"
-
-  
 end

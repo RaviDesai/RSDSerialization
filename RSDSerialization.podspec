@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "RSDSerialization"
-  s.version          = "0.3.0"
+  s.version          = "0.3.1"
   s.summary          = "JSON Serialization helpers written in swift"
   s.description      = <<-DESC
                         Methods to aid in JSON serialization/deserialization for STRUCT types in Swift.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/RaviDesai/RSDSerialization.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/Ravi_S_Desai'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

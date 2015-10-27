@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16C8289F588BE41D146B841A576CF24B"
+               BlueprintIdentifier = "6ADF59A8A72BE809FA1306F2E55E54C8"
                BuildableName = "RSDSerialization.framework"
                BlueprintName = "RSDSerialization"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16C8289F588BE41D146B841A576CF24B"
+            BlueprintIdentifier = "6ADF59A8A72BE809FA1306F2E55E54C8"
             BuildableName = "RSDSerialization.framework"
             BlueprintName = "RSDSerialization"
             ReferencedContainer = "container:Pods.xcodeproj">
