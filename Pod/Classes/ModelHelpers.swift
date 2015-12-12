@@ -20,6 +20,13 @@ public extension Dictionary {
             self.addIf(tuple.0, value: tuple.1)
         }
     }
+    
+    init (tuples: (Key, Value?)...) {
+        self.init()
+        for tuple in tuples {
+            self.addIf(tuple.0, value: tuple.1)
+        }
+    }
 }
 
 private func convertToFormUrl<Key, Value>(fromDictionary: Dictionary<Key, Value>) -> NSData {
