@@ -26,6 +26,7 @@ class iTunesSearchController: UIViewController, UITableViewDelegate {
     }
     
     func instantiateControlsFromViewModel() {
+        if (!self.isViewLoaded()) { return }
         self.tableView.dataSource = viewModel
         self.searchBar.delegate = viewModel
         self.searchBar.text = viewModel!.searchText

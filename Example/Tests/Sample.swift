@@ -32,8 +32,8 @@ struct Sample: JSONSerializable, Equatable {
     
     func convertToJSON() -> JSONDictionary {
         var dict = JSONDictionary()
-        addTuplesIf(&dict,
-            tuples: ("S", self.s), ("I", self.i))
+        dict.addTuplesIf(
+            ("S", self.s), ("I", self.i))
         return dict
     }
 }

@@ -128,8 +128,8 @@ public struct Content : JSONSerializable {
     
     public func convertToJSON() -> JSONDictionary {
         var dict = JSONDictionary()
-        addTuplesIf(&dict,
-            tuples: ("wrapperType", self.Wrapper.rawValue),
+        dict.addTuplesIf(
+            ("wrapperType", self.Wrapper.rawValue),
             ("kind", self.Kind.rawValue),
             ("artistId", self.ArtistId),
             ("collectionId", self.CollectionId),

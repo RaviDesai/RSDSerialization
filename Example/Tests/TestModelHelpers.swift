@@ -29,17 +29,11 @@ class TestModelHelpers: XCTestCase {
     
     func testSampleSerializeArray() {
         let sampleArray = [Sample(s: "one", i: 1), Sample(s: "two", i: 2)]
-        let json = convertToJSONArray(sampleArray)!
+        let json = sampleArray.convertToJSONArray()
         
         let converted = ModelFactory<Sample>.createFromJSONArray(json)
         XCTAssertTrue(converted != nil)
         XCTAssertTrue(sampleArray == converted!)
-    }
-    
-    func testConvertToJSONArrayWithNull() {
-        let sampleArray: [Sample]? = nil
-        let converted = convertToJSONArray(sampleArray)
-        XCTAssertTrue(converted == nil)
     }
     
     func testCreateFromJSONArrayWhenNotPassedArray() {
