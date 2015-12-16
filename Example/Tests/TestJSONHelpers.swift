@@ -13,10 +13,6 @@ import Foundation
 
 
 class TestJSONHelpers: XCTestCase {
-    func testToStringFromDateWhenNull() {
-        XCTAssertTrue(toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: nil) == nil)
-    }
-    
     func testUUID() {
         let uuid = NSUUID()
         let json: JSON = uuid.UUIDString
@@ -89,7 +85,7 @@ class TestJSONHelpers: XCTestCase {
     
     func testDate() {
         let d = NSDate(timeIntervalSince1970: 0)
-        let json: JSON = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: d)!
+        let json: JSON = d.toUTCString("yyyy-MM-dd'T'HH:mm:ssX")!
         let converted = json >>- asDate("yyyy-MM-dd'T'HH:mm:ssX")
         
         XCTAssertTrue(converted != nil)

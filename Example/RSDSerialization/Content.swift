@@ -157,7 +157,7 @@ public struct Content : JSONSerializable {
             ("country", self.Country),
             ("currency", self.Currency),
             ("primaryGenreName", self.PrimaryGenreName),
-            ("releaseDate", toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: self.ReleaseDate))
+            ("releaseDate", self.ReleaseDate.toUTCString("yyyy-MM-dd'T'HH:mm:ssX"))
         )
         return dict
     }

@@ -48,15 +48,15 @@ class Tests: XCTestCase {
     }
     
     func testReleaseDates() {
-        let releaseDates = contentRecords?.Results.map { $0.ReleaseDate }.filter { $0 == toDateFromString("yyyy-MM-dd'T'HH:mm:ssX", dateString: "2011-09-23T07:00:00Z") }
+        let releaseDates = contentRecords?.Results.map { $0.ReleaseDate }.filter { $0 == "2011-09-23T07:00:00Z".toDate("yyyy-MM-dd'T'HH:mm:ssX") }
         XCTAssert(releaseDates?.count == .Some(44), "6 records have different dates")
         
         let releaseDateForFirstRecord = contentRecords?.Results.map { $0.ReleaseDate }.first
-        let firstRecordDate = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: releaseDateForFirstRecord)
+        let firstRecordDate = releaseDateForFirstRecord?.toUTCString("yyyy-MM-dd'T'HH:mm:ssX")
         XCTAssert(firstRecordDate == "2011-09-23T07:00:00Z", "date for first record wrong")
 
         let releaseDateForLastRecord = contentRecords?.Results.map { $0.ReleaseDate }.last
-        let lastRecordDate = toStringFromDate("yyyy-MM-dd'T'HH:mm:ssX", dateOptional: releaseDateForLastRecord)
+        let lastRecordDate = releaseDateForLastRecord?.toUTCString("yyyy-MM-dd'T'HH:mm:ssX")
         XCTAssert(lastRecordDate == "2011-09-23T07:00:00Z", "date for last record wrong")
     }
     
