@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6ADF59A8A72BE809FA1306F2E55E54C8"
+               BlueprintIdentifier = "90DFDC526A53BDA3C02A83313161BB87"
                BuildableName = "RSDSerialization.framework"
                BlueprintName = "RSDSerialization"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6ADF59A8A72BE809FA1306F2E55E54C8"
+            BlueprintIdentifier = "90DFDC526A53BDA3C02A83313161BB87"
             BuildableName = "RSDSerialization.framework"
             BlueprintName = "RSDSerialization"
             ReferencedContainer = "container:Pods.xcodeproj">

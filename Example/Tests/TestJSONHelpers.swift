@@ -154,5 +154,14 @@ class TestJSONHelpers: XCTestCase {
         let sample = Sample.createFromJSON(json)
         XCTAssertTrue(sample == nil)
     }
+    
+    func testUUIDArray() {
+        let uuidRa : [NSUUID] = [NSUUID(), NSUUID()]
+        let asjson = uuidRa.convertToJSONArray()
+        let reconstituted = NSUUID.createFromJSONArray(asjson)
+        
+        XCTAssertTrue(reconstituted != nil)
+        XCTAssertTrue(reconstituted! == uuidRa)
+    }
 
 }

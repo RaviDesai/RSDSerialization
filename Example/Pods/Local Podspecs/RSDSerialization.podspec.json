@@ -1,6 +1,6 @@
 {
   "name": "RSDSerialization",
-  "version": "0.3.0",
+  "version": "0.3.5",
   "summary": "JSON Serialization helpers written in swift",
   "description": "Methods to aid in JSON serialization/deserialization for STRUCT types in Swift.\nOf course these methods can also be used for CLASS types, but since CLASS types can support dynamic (objective-c) style reflection, there are probably better alternatives.",
   "homepage": "https://github.com/RaviDesai/RSDSerialization",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/RaviDesai/RSDSerialization.git",
-    "tag": "0.3.0"
+    "tag": "0.3.5"
   },
   "social_media_url": "https://twitter.com/Ravi_S_Desai",
   "platforms": {

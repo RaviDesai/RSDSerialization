@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "RSDSerialization"
-  s.version          = "0.3.4"
+  s.version          = "0.3.5"
   s.summary          = "JSON Serialization helpers written in swift"
   s.description      = <<-DESC
                         Methods to aid in JSON serialization/deserialization for STRUCT types in Swift.
